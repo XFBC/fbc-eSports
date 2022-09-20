@@ -78,7 +78,7 @@ app.get('/games/:id/ads', async (request, response) => {
     },
 
     where:{
-      gameId: gameId
+      gameId: gameId,
     },
 
     orderBy:{

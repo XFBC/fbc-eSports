@@ -3,10 +3,10 @@ import * as Dialog from '@radix-ui/react-dialog'
 
 export default function CreateAd() {
   return (
-    <div className="pt-[9px] bg-box-gradient self-stretch rounded-lg mt-8">
-      <div className="bg-[#2A2634] px-8 py-6 flex justify-between items-center">
+    <div className="pt-[9px] bg-box-gradient self-stretch rounded-lg mt-8 mx-4">
+      <div className="bg-[#2A2634] px-8 py-6 flex justify-between items-center flex-col lg:flex-row md:flex-row gap-8 text-center lg:text-left md:text-left">
         <div>
-          <strong className="font-black text-white text-2xl block">
+          <strong className="font-black text-white lg:text-2xl text-xl block">
             Não encontrou seu duo ?
           </strong>{' '}
           <span className="text-zinc-400 block">
