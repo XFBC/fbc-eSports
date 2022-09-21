@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react'
 import * as Dialog from '@radix-ui/react-dialog'
 import { CreateAdModal } from './components/CreateAdModal'
 import axios from 'axios'
+import { api } from './lib/axios'
 
 interface Game {
   id: string
@@ -22,6 +23,12 @@ function App() {
   useEffect(() => {
     axios('http://localhost:3333/games').then(response => {
       setGames(response.data)
+    })
+  }, [])
+
+  useEffect(() => {
+    api.get('/games').then(r => {
+      setGames(r.data)
     })
   }, [])
 
