@@ -1,12 +1,12 @@
 import './styles.css'
-import Logo from './assets/Logo.svg'
+// import Logo from './assets/Logo.svg'
 import GameBanner from './components/GameBanner'
 import CreateAd from './components/CreateAd'
 import { useEffect, useState } from 'react'
 import * as Dialog from '@radix-ui/react-dialog'
 import { CreateAdModal } from './components/CreateAdModal'
-import axios from 'axios'
-import { api } from './lib/axios'
+// import axios from 'axios'
+// import { api } from './lib/axios'
 
 interface Game {
   id: string
@@ -20,22 +20,22 @@ interface Game {
 function App() {
   const [games, setGames] = useState<Game[]>([])
 
-  useEffect(() => {
-    axios('http://localhost:3333/games').then(response => {
-      setGames(response.data)
-    })
-  }, [])
+  // useEffect(() => {
+  //   axios('http://localhost:3333/games').then(response => {
+  //     setGames(response.data)
+  //   })
+  // }, [])
 
-  useEffect(() => {
-    api.get('/games').then(r => {
-      setGames(r.data)
-    })
-  }, [])
+  // useEffect(() => {
+  //   api.get('/games').then(r => {
+  //     setGames(r.data)
+  //   })
+  // }, [])
 
   return (
     <div>
       <div className="max-w-[1400px] mx-auto flex flex-col  items-center my-20">
-        <img className="" src={Logo} alt="" />
+        <img className="" src="./logo.png" alt="" />
         <h1 className="text-[40px] md:text-[64px] text-white font-black mt-20 pl-8">
           {' '}
           Seu{' '}
