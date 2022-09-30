@@ -39,7 +39,7 @@ export function CreateAdModal() {
 
     //Axios post
     try {
-      await axios.post(
+      await api.post(
         `https://nlw-esports-serve-production.up.railway.app/games/${data.game}/ads`,
         {
           name: data.name,
