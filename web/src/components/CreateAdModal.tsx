@@ -4,7 +4,9 @@ import Input from './form/Input'
 import * as Checkbox from '@radix-ui/react-checkbox'
 import { useEffect, useState, FormEvent } from 'react'
 import * as ToggleGroup from '@radix-ui/react-toggle-group'
+import { api } from './../lib/axios'
 import axios from 'axios'
+
 
 
 export function CreateAdModal() {
@@ -17,9 +19,15 @@ export function CreateAdModal() {
   const [weekDays, setWeekDays] = useState<string[]>([])
   const [useVoiceChannel, setUseVoiceChannel] = useState(false)
 
+  // useEffect(() => {
+  //   axios('/games').then(Response => {
+  //     setGames(Response.data)
+  //   })
+  // }, [])
+
   useEffect(() => {
-    axios('http://localhost:3333/games').then(Response => {
-      setGames(Response.data)
+    api.get('/games').then(r => {
+      setGames(r.data)
     })
   }, [])
 
