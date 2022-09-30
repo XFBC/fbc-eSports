@@ -7,8 +7,6 @@ import * as ToggleGroup from '@radix-ui/react-toggle-group'
 import { api } from './../lib/axios'
 import axios from 'axios'
 
-
-
 export function CreateAdModal() {
   interface Game {
     id: string
@@ -18,12 +16,6 @@ export function CreateAdModal() {
   const [games, setGames] = useState<Game[]>([])
   const [weekDays, setWeekDays] = useState<string[]>([])
   const [useVoiceChannel, setUseVoiceChannel] = useState(false)
-
-  // useEffect(() => {
-  //   axios('/games').then(Response => {
-  //     setGames(Response.data)
-  //   })
-  // }, [])
 
   useEffect(() => {
     api.get('/games').then(r => {
@@ -47,15 +39,18 @@ export function CreateAdModal() {
 
     //Axios post
     try {
-      await axios.post(`http://localhost:3333/games/${data.game}/ads`, {
-        name: data.name,
-        yearsPlaying: Number(data.yearsPlaying),
-        discord: data.discord,
-        weekDays: weekDays.map(Number),
-        hourStart: data.hourStart,
-        hourEnd: data.hourEnd,
-        useVoiceannel: useVoiceChannel
-      })
+      await axios.post(
+        `https://nlw-esports-serve-production.up.railway.app/games/${data.game}/ads`,
+        {
+          name: data.name,
+          yearsPlaying: Number(data.yearsPlaying),
+          discord: data.discord,
+          weekDays: weekDays.map(Number),
+          hourStart: data.hourStart,
+          hourEnd: data.hourEnd,
+          useVoiceannel: useVoiceChannel
+        }
+      )
 
       alert('anúncio criado com sucesso ')
     } catch (err) {
